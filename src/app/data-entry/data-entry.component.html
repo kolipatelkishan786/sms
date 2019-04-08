@@ -1,0 +1,65 @@
+<div class="banner1">
+  <div class="w3_agileits_service_banner_info">
+    <h2>Data Entry</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="bs-example">
+      <form>
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" class="form-control" [(ngModel)]="data.first_name" name="first_name"
+                 placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" class="form-control" [(ngModel)]="data.last_name" name="last_name" placeholder="LastName"
+                 required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="text" class="form-control" [(ngModel)]="data.email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <textarea type="text" class="form-control" rows="3" [(ngModel)]="data.address" name="address"
+                    placeholder="Address..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="onSaveData()">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr class="tdata">
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th colspan="2">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of datas">
+        <td>{{item.first_name}}</td>
+        <td>{{item.last_name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.address}}</td>
+      <td>
+       <button type="button" class="btn btn-primary"><span><i class="fa fa-edit" style="font-size:24px"></i></span>
+       </button>
+     </td>
+     <td>
+       <button type="button" class="btn btn-success"><span><i class="fa fa-trash" style="font-size:24px"></i></span>
+       </button>
+     </td>
+   </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-modal></app-modal>
