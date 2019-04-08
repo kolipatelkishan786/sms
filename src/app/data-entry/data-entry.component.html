@@ -50,11 +50,11 @@
         <td>{{item.email}}</td>
         <td>{{item.address}}</td>
       <td>
-       <button type="button" class="btn btn-primary"><span><i class="fa fa-edit" style="font-size:24px"></i></span>
+       <button type="button" class="btn btn-primary" (click)="editData(item)"><span><i class="fa fa-edit" style="font-size:24px"></i></span>
        </button>
      </td>
      <td>
-       <button type="button" class="btn btn-success"><span><i class="fa fa-trash" style="font-size:24px"></i></span>
+       <button type="button" class="btn btn-success" (click)="deleteData(item)"><span><i class="fa fa-trash" style="font-size:24px"></i></span>
        </button>
      </td>
    </tr>

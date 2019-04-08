@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {IDataEntry} from '../interfaces/IDataEntry';
+import {ViewData} from '@angular/core/src/view';
 
 @Component({
   selector: 'app-data-entry',
@@ -16,6 +17,7 @@ export class DataEntryComponent implements OnInit {
       address: 'zolapur',
     }
   ];
+
   constructor() {
   }
 
@@ -28,5 +30,14 @@ export class DataEntryComponent implements OnInit {
     this.datas.push(this.data);
     this.data = <any> {};
     console.log(this.datas);
+  }
+
+  editData(item) {
+    this.data = item;
+  }
+
+  deleteData(item) {
+    this.datas.splice(
+      this.datas.indexOf(item), 1);
   }
 }
