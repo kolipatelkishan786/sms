@@ -17,12 +17,13 @@ export class DataEntryComponent implements OnInit {
       address: 'zolapur',
     }
   ];
+  showSaveButton = true;
 
   constructor() {
   }
 
   ngOnInit() {
-    /* this.loadDummyData();*/
+
   }
 
   onSaveData() {
@@ -34,10 +35,17 @@ export class DataEntryComponent implements OnInit {
 
   editData(item) {
     this.data = item;
+    this.showSaveButton = false;
   }
 
   deleteData(item) {
     this.datas.splice(
       this.datas.indexOf(item), 1);
   }
+
+  onclosedata() {
+    this.data = <any>{};
+    this.showSaveButton = true;
+  }
+
 }
